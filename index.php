@@ -1,25 +1,24 @@
 <?php
 
-// if($condition) {
-//     ...
-// } elseif($another_condition) {
-//     ...
-// } else {
+// for($x = 0; $x < 10; $x++) {
+//     echo "hello $x";
+// }
+
+
+// while(condition) {
 //     ...
 // }
 
 
-// switch($var) {
-//     case 'valor 1':
-//         ...
-//         break;
-//     case 'valor 2':
-//     case 'valor 3':
-//         ...
-//         break;
-//     default:
-//         ...
+// do {
+//     ... 
+// } while (condition is true);
+
+
+// foreach($array as $value) {
+//     ...
 // }
 
-
-// (condition) ? do this if true : otherwise do this;
+// foreach($array as $key => $value) {
+//     ...
+// }
