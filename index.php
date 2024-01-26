@@ -1,15 +1,28 @@
 <?php
 
-// echo 2 + 4;
-// echo 2 - 4;
-// echo 2 / 4;
-// echo 2 * 4;
-// echo 2 ** 4;
-// echo 9 % 2;
+$array = [1, 2, 3, 'carlos', [10, 20, 30]];
+$b = array(1, 2, 3, 4);
 
-// var_dump(2 == 2);
-// var_dump(2 === '2');
-// var_dump(5 >= 3);
-// >, >=, <, <=
+// print_r($array);
+// var_dump($array);
 
-// var_dump(true && false); // &&, ||, !, xor
+// each item
+    // key
+    // value
+
+// Indexed
+$c = [
+    0 => 1,
+    23 => 2,
+    55 => 'carlos'
+];
+
+// Associative
+$d = [
+    'a' => 1,
+    'c' => 2,
+    'xyz' => 'carlos'
+];
+
+$d['novo'] = 'novo valor';
+echo $d['novo'];
