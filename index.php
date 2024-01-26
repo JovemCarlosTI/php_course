@@ -1,19 +1,15 @@
 <?php
 
-// Integer
-$x = 10;
-$x = 15;
+// echo 2 + 4;
+// echo 2 - 4;
+// echo 2 / 4;
+// echo 2 * 4;
+// echo 2 ** 4;
+// echo 9 % 2;
 
-// String
-$example = 'x is $x';
-$exampleInterpreted = "x is $x";
-echo $exampleInterpreted;
+// var_dump(2 == 2);
+// var_dump(2 === '2');
+// var_dump(5 >= 3);
+// >, >=, <, <=
 
-// Array
-$array = [10, 20, 30, 'carlos', true, "$x"];
-
-// Object
-$date = new DateTime();
-
-// Null
-$null = null;
+// var_dump(true && false); // &&, ||, !, xor
