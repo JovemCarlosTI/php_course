@@ -1,24 +1,10 @@
 <?php
 
-// for($x = 0; $x < 10; $x++) {
-//     echo "hello $x";
-// }
+$n = "3";
+$result = match($n) {
+    "5" => "5",
+    "3", "4" => "3 or 4",
+    default => "nothing",
+};
 
-
-// while(condition) {
-//     ...
-// }
-
-
-// do {
-//     ... 
-// } while (condition is true);
-
-
-// foreach($array as $value) {
-//     ...
-// }
-
-// foreach($array as $key => $value) {
-//     ...
-// }
+echo $result;
