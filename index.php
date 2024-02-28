@@ -1,26 +1,22 @@
 <?php
-    // Files
+    // Read CSV
+    $file = fopen('./example.csv', 'r');
 
-    //Flags
-        // r - read
-        // w - write
-        // a - append
-
-        
-    // Read file
-    $file = fopen(filename: './example.txt', mode: 'r');
-
-    $line = fgets($file);
+    $line = fgetcsv($file);
     while($line) {
-        echo $line . PHP_EOL;
-        $line = fgets($file);
-    }
-    
-    // Write file
-    $file = fopen(filename: './example.txt', mode: 'w');
-    
-    fwrite($file, 'Hello World' . PHP_EOL);
+        $id = $line[0];
+        $name = $line[1];
 
-    // Close file
+        echo "ID: $id, Name: $name" . PHP_EOL;
+        $line = fgetcsv($file);
+    }
+
+    fclose($file);
+
+    // Write CSV
+    $file = fopen('./example.csv', 'a');
+
+    fputcsv($file, ['4', 'Pinterest']);
+
     fclose($file);
 ?>
