@@ -1,43 +1,56 @@
 <?php
-    // Read JSON
-    $json = '{"name": "John", "age": 30, "city": "New York"}';
-    $array = json_decode($json, associative: true);
-    print_r($array);
+    $data = '{
+        "UK": "44",
+        "US": "1",
+        "India": "91",
+        "China": "86",
+        "Nigeria": "234",
+        "Brazil": "55",
+        "Japan": "81",
+        "Germany": "49",
+        "Russia": "7",
+        "Mexico": "52",
+        "Canada": "1",
+        "France": "33",
+        "Italy": "39",
+        "South Korea": "82",
+        "Spain": "34",
+        "Australia": "61",
+        "Indonesia": "62",
+        "Netherlands": "31",
+        "Saudi Arabia": "966",
+        "Switzerland": "41",
+        "Sweden": "46",
+        "Norway": "47",
+        "Denmark": "45",
+        "Finland": "358",
+        "Belgium": "32",
+        "Austria": "43",
+        "Greece": "30",
+        "Poland": "48",
+        "Turkey": "90",
+        "Portugal": "351",
+        "Czech Republic": "420",
+        "Hungary": "36",
+        "Ireland": "353",
+        "New Zealand": "64",
+        "Singapore": "65"
+    }';
 
-    // Write JSON
-    $json = json_encode(["name" => "John", "age" => 30, "city" => "New York"]);
-    echo $json;
+    // Search for Brazil
+    $query = 'Brazil';
+    $countries = json_decode($data, true);
+    $phone_code = $countries[$query];
 
-    // Read XML
-    $xml = '<?xml version="1.0" encoding="UTF-8"?>
-    <accounts>
-        <account>
-            <name>John</name>
-            <age>30</age>
-            <city>New York</city>
-        </account>
-        <account>
-            <name>Peter</name>
-            <age>35</age>
-            <city>Chicago</city>
-        </account>
-        </accounts>';
+    echo $phone_code;
 
-    $dom = new DOMDocument();
-    $dom->loadXML($xml);
-    $accounts = $dom->getElementsByTagName("account");
+    // Saving the CSV file
+    $file = fopen('countries.csv', 'w');
 
-    foreach ($accounts as $account) {
-        $name = $account->getElementsByTagName("name")[0]->nodeValue;
-        $age = $account->getElementsByTagName("age")[0]->nodeValue;
-        $city = $account->getElementsByTagName("city")[0]->nodeValue;
-        echo "Nome: $name, Idade: $age, Cidade: $city" . PHP_EOL;
+    fputcsv($file, ['Country', 'Phone Code']);
+    foreach ($countries as $country => $phone_code) {
+        fputcsv($file, [$country, $phone_code]);
     }
 
-    // Write XML
-    $accounts = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><accounts></accounts>');
-    $accounts->addChild("account", "John")->addAttribute('type', 'admin');
-    $accounts->addChild("account", "Peter")->addAttribute('type', 'user');
-
-    $accounts->asXML("accounts.xml");
+    fclose($file);
 ?>
